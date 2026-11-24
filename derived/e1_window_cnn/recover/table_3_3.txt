@@ -1,0 +1,19 @@
+============================================================================================
+E1 — request 3-3(4).  39 pairs, fine, seed 0, 2000 test traces, canonical-form candidates
+============================================================================================
+                                    Q*max  Q*mean   SR@5    acc%  info(bit)
+--------------------------------------------------------------------------------------------
+Original head N39 s0 (pooled)          18    8.38   0.50    61.1       2.23
+Local readout N39 s0                    7    5.18   0.98    96.9       2.84
+Local readout N49 s0                    6    5.05   0.99    97.0       3.33
+raw linear 320 (A1)                    20    12.1   0.05    43.9       1.42
+window CNN W1318 s0                     6     5.0   0.99    95.4       3.28
+--------------------------------------------------------------------------------------------
+  window CNN trained on 64,000 traces, local heads on 16,000 — a direction favoring the window CNN (3-5)
+
+3-4 decision values — baseline = E2 local readout 10 seeds (N39·N49, 39 pairs, fine)
+  local N39: Q*max 6.4 [6,7]  Q*mean 5.19
+  local N49: Q*max 6.6 [6,8]  Q*mean 5.22
+  window CNN W-RF: Q*max 6  Q*mean 5.0  (Q*mean -0.21 vs local)
+  -> box 2 — the jointly trained backbone has the same quality as the window unit; the loss is only in the readout
+============================================================================================

@@ -1,0 +1,12 @@
+run_id,arch,src_n_pairs,seed,ckpt,feat_ch,feat_len,pool_width,probe_epochs,n_seen,n_unseen,acc_seen,info_seen,acc_unseen,info_unseen,majority_unseen,time_min
+A1_resnet_N39_s0,resnet,39,0,main,512,500,4,15,39,0,96.892,2.839,,,,0.59
+A2_resnet_N39_s1,resnet,39,1,main,512,500,4,16,39,0,97.096,3.194,,,,0.6
+A3_resnet_N39_s0_D,resnet,39,0,D,512,500,4,39,39,0,96.255,3.07,,,,0.91
+A4_resnet_N29_s0_D29,resnet,29,0,D29,512,500,4,56,29,10,93.32,2.974,72.235,1.358,11.892,1.14
+A0_resnet_N29_s0,resnet,29,0,main,512,500,4,46,29,10,95.456,3.115,82.445,1.739,11.892,1.07
+B1a_resnet_N49_s0,resnet,49,0,main,512,500,4,25,39,0,97.007,3.322,,,,0.75
+B1b_resnet_N49_s1,resnet,49,1,main,512,500,4,27,39,0,97.104,3.336,,,,0.78
+B1c_resnet_N128_s0,resnet,128,0,main,512,500,4,58,39,0,80.525,1.749,,,,1.21
+B1d_resnet_N128_s1,resnet,128,1,main,512,500,4,52,39,0,94.444,2.141,,,,1.16
+B2a_mobilenet_N39_s1,mobilenet,39,1,main,1280,250,2,48,39,0,85.116,2.609,,,,1.21
+B2b_mobilenet_N39_s2,mobilenet,39,2,main,1280,250,2,39,39,0,92.54,2.947,,,,1.06

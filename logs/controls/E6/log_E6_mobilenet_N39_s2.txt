@@ -1,0 +1,26 @@
+    [mobilenet N39(78h) s2 001/100] train 2.6125 | val 2.5817 | acc 10.73% | GE 5.763 | gn 0.838
+    [mobilenet N39(78h) s2 002/100] train 2.5493 | val 2.5694 | acc 10.70% | GE 5.750 | gn 0.474
+    [mobilenet N39(78h) s2 003/100] train 2.5254 | val 2.5503 | acc 11.04% | GE 5.691 | gn 0.402
+    [mobilenet N39(78h) s2 004/100] train 2.5199 | val 2.5089 | acc 11.07% | GE 5.594 | gn 0.382
+    [mobilenet N39(78h) s2 005/100] train 2.5151 | val 2.5010 | acc 11.29% | GE 5.550 | gn 0.351
+    [mobilenet N39(78h) s2 006/100] train 2.5111 | val 2.5051 | acc 11.23% | GE 5.562 | gn 0.304
+    [mobilenet N39(78h) s2 007/100] train 2.5073 | val 2.5029 | acc 11.27% | GE 5.562 | gn 0.258
+    [mobilenet N39(78h) s2 008/100] train 2.5043 | val 2.5086 | acc 11.22% | GE 5.580 | gn 0.260
+    [mobilenet N39(78h) s2 009/100] train 2.5007 | val 2.4930 | acc 11.29% | GE 5.537 | gn 0.221
+    [mobilenet N39(78h) s2 010/100] train 2.4972 | val 2.4876 | acc 11.42% | GE 5.497 | gn 0.192
+    [mobilenet N39(78h) s2 011/100] train 2.4945 | val 2.4857 | acc 11.43% | GE 5.489 | gn 0.177
+    [mobilenet N39(78h) s2 012/100] train 2.4919 | val 2.4880 | acc 11.37% | GE 5.501 | gn 0.163
+    [mobilenet N39(78h) s2 013/100] train 2.4892 | val 2.4834 | acc 11.50% | GE 5.473 | gn 0.139
+    [mobilenet N39(78h) s2 014/100] train 2.4872 | val 2.4877 | acc 11.40% | GE 5.496 | gn 0.120
+    [mobilenet N39(78h) s2 015/100] train 2.4852 | val 2.4845 | acc 11.48% | GE 5.483 | gn 0.109
+    [mobilenet N39(78h) s2 016/100] train 2.4835 | val 2.4839 | acc 11.40% | GE 5.491 | gn 0.094
+    [mobilenet N39(78h) s2 017/100] train 2.4819 | val 2.4795 | acc 11.56% | GE 5.459 | gn 0.081
+    [mobilenet N39(78h) s2 018/100] train 2.4803 | val 2.4785 | acc 11.55% | GE 5.455 | gn 0.071
+    [mobilenet N39(78h) s2 019/100] train 2.4791 | val 2.4779 | acc 11.58% | GE 5.451 | gn 0.064
+    [mobilenet N39(78h) s2 020/100] train 2.4780 | val 2.4912 | acc 11.34% | GE 5.534 | gn 0.049
+    [mobilenet N39(78h) s2 021/100] train 2.4772 | val 2.4770 | acc 11.62% | GE 5.445 | gn 0.044
+    [mobilenet N39(78h) s2 022/100] train 2.4765 | val 2.4753 | acc 11.59% | GE 5.436 | gn 0.040
+    [mobilenet N39(78h) s2 023/100] train 2.4760 | val 2.4799 | acc 11.56% | GE 5.462 | gn 0.041
+    [mobilenet N39(78h) s2 024/100] train 2.4755 | val 2.4748 | acc 11.65% | GE 5.432 | gn 0.032
+    [mobilenet N39(78h) s2 025/100] train 2.4752 | val 2.4743 | acc 11.67% | GE 5.430 | gn 0.026
+  [mobilenet N39(78h) s2] acc 11.67% | GE 5.4299 | 4.079M | VRAM max 6778MB avg 101MB | 82.58 min

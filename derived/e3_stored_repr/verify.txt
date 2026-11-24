@@ -1,0 +1,29 @@
+index cross-check match ✓  (2000 traces, 20 accumulation orders, compared with the main fine evaluation)
+E3 mismatch-rate check: 0% on all 39 pairs with the oracle representation ✓  (canonical form mismatches on 7 pairs)
+reproduction check (1-3, section 12): 9 of 9 reference values match
+index cross-check match ✓  (2000 traces, 20 accumulation orders, compared with the main fine evaluation)
+E3 mismatch-rate check: 0% on all 39 pairs with the oracle representation ✓  (canonical form mismatches on 7 pairs)
+reproduction check (1-3, section 12): 9 of 9 reference values match
+index cross-check match ✓  (2000 traces, 20 accumulation orders, compared with the main fine evaluation)
+E3 mismatch-rate check: 0% on all 39 pairs with the oracle representation ✓  (canonical form mismatches on 7 pairs)
+reproduction check (1-3, section 12): 9 of 9 reference values match
+index cross-check match ✓  (2000 traces, 20 accumulation orders, compared with the main fine evaluation)
+E3 mismatch-rate check: 0% on all 39 pairs with the oracle representation ✓  (canonical form mismatches on 7 pairs)
+reproduction check (1-3, section 12): 9 of 9 reference values match
+index cross-check match ✓  (2000 traces, 20 accumulation orders, compared with the main fine evaluation)
+E3 mismatch-rate check: 0% on all 39 pairs with the oracle representation ✓  (canonical form mismatches on 7 pairs)
+reproduction check (1-3, section 12): 9 of 9 reference values match
+index cross-check match ✓  (2000 traces, 20 accumulation orders, compared with the main fine evaluation)
+E3 mismatch-rate check: 0% on all 39 pairs with the oracle representation ✓  (canonical form mismatches on 7 pairs)
+reproduction check (1-3, section 12): 9 of 9 reference values match
+local reproduction A0_resnet_N29_s0: canonical-form Q*max 8 (existing 8) ✓
+local reproduction A1_resnet_N39_s0: canonical-form Q*max 7 (existing 7) ✓
+local reproduction A2_resnet_N39_s1: canonical-form Q*max 6 (existing 6) ✓
+local reproduction A3_resnet_N39_s0_D: canonical-form Q*max 8 (existing 8) ✓
+local reproduction A4_resnet_N29_s0_D29: canonical-form Q*max 12 (existing 12) ✓
+local reproduction B1a_resnet_N49_s0: canonical-form Q*max 6 (existing 6) ✓
+local reproduction B1b_resnet_N49_s1: canonical-form Q*max 7 (existing 7) ✓
+local reproduction B1c_resnet_N128_s0: canonical-form Q*max 16 (existing 16) ✓
+local reproduction B1d_resnet_N128_s1: canonical-form Q*max 9 (existing 9) ✓
+local reproduction B2a_mobilenet_N39_s1: canonical-form Q*max >50 (existing >50) ✓
+local reproduction B2b_mobilenet_N39_s2: canonical-form Q*max 8 (existing 8) ✓

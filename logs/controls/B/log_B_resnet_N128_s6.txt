@@ -1,0 +1,18 @@
+    [resnet N128(256h) s6 001/100] train 2.5571 | val 2.4988 | acc 11.12% | GE 5.582 | gn 0.172
+    [resnet N128(256h) s6 002/100] train 2.4856 | val 2.4750 | acc 11.66% | GE 5.432 | gn 0.048
+    [resnet N128(256h) s6 003/100] train 2.4768 | val 2.4742 | acc 11.72% | GE 5.426 | gn 0.041
+    [resnet N128(256h) s6 004/100] train 2.4747 | val 2.4746 | acc 11.74% | GE 5.427 | gn 0.023
+    [resnet N128(256h) s6 005/100] train 2.4743 | val 2.4741 | acc 11.71% | GE 5.427 | gn 0.020
+    [resnet N128(256h) s6 006/100] train 2.4741 | val 2.4740 | acc 11.68% | GE 5.429 | gn 0.018
+    [resnet N128(256h) s6 007/100] train 2.4740 | val 2.4740 | acc 11.69% | GE 5.429 | gn 0.016
+    [resnet N128(256h) s6 008/100] train 2.4738 | val 2.4743 | acc 11.69% | GE 5.430 | gn 0.013
+    [resnet N128(256h) s6 009/100] train 2.4737 | val 2.4738 | acc 11.71% | GE 5.426 | gn 0.012
+    [resnet N128(256h) s6 010/100] train 2.4737 | val 2.4766 | acc 11.58% | GE 5.440 | gn 0.011
+    [resnet N128(256h) s6 011/100] train 2.4740 | val 2.4746 | acc 11.66% | GE 5.431 | gn 0.012
+    [resnet N128(256h) s6 012/100] train 2.4736 | val 2.4737 | acc 11.72% | GE 5.426 | gn 0.010
+    [resnet N128(256h) s6 013/100] train 2.4735 | val 2.4736 | acc 11.72% | GE 5.425 | gn 0.009
+    [resnet N128(256h) s6 014/100] train 2.4735 | val 2.4736 | acc 11.73% | GE 5.427 | gn 0.009
+    [resnet N128(256h) s6 015/100] train 2.4734 | val 2.4735 | acc 11.72% | GE 5.425 | gn 0.008
+    [resnet N128(256h) s6 016/100] train 2.4734 | val 2.4736 | acc 11.71% | GE 5.426 | gn 0.008
+    [resnet N128(256h) s6 017/100] train 2.4733 | val 2.4736 | acc 11.71% | GE 5.426 | gn 0.007
+  [resnet N128(256h) s6] acc 11.74% | GE 5.427 | 6.339M | VRAM max 3469MB avg 138MB | 53.64 min

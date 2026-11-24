@@ -1,0 +1,6 @@
+run_id,arch,resnet_variant,n_pairs,heads,seed,lr,batch,max_epochs,patience,grad_clip,loss_reduction,label_type,phantom_label,crop_lo,crop_hi,leak_pairs,val_acc_allheads,ge_allheads,epochs_run,params_m,total_time_min,best_model_time_min,vram_max_mb,vram_avg_mb
+R5_resnet_N128_s10,resnet,resnet18,128,256,10,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,24.6532,4.356,100,6.339,751.22,726.79,3469.9,139.0
+R5_resnet_N128_s12,resnet,resnet18,128,256,12,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,22.2161,4.4114,73,6.339,594.78,594.77,3469.9,139.0
+R5_resnet_N128_s11,resnet,resnet18,128,256,11,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,27.6014,4.3036,100,6.339,813.31,813.31,3469.9,139.0
+R5_resnet_N128_s13,resnet,resnet18,128,256,13,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,23.6379,4.3787,70,6.339,570.34,570.34,3469.9,139.0
+R5_resnet_N128_s14,resnet,resnet18,128,256,14,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,27.0834,4.3117,96,6.339,636.44,636.43,3469.9,139.0

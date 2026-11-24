@@ -1,0 +1,7 @@
+run_id,arch,resnet_variant,n_pairs,heads,seed,lr,batch,max_epochs,patience,grad_clip,loss_reduction,label_type,phantom_label,crop_lo,crop_hi,leak_pairs,val_acc_allheads,ge_allheads,epochs_run,params_m,total_time_min,best_model_time_min,vram_max_mb,vram_avg_mb
+E6_mobilenet_N29_s0,mobilenet,,29,58,0,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,94.5496,1.0613,63,3.592,194.54,191.45,6773.5,93.6
+E6_mobilenet_N29_s1,mobilenet,,29,58,1,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.6825,5.4298,25,3.592,77.73,77.73,6770.6,93.6
+E6_mobilenet_N29_s2,mobilenet,,29,58,2,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,93.9301,1.0705,85,3.592,264.56,255.22,6770.6,93.6
+E6_mobilenet_N39_s0,mobilenet,,39,78,0,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,93.4873,1.0759,73,4.079,242.67,239.51,6778.4,101.4
+E6_mobilenet_N39_s1,mobilenet,,39,78,1,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.6575,5.4293,26,4.079,85.46,82.1,6778.4,101.4
+E6_mobilenet_N39_s2,mobilenet,,39,78,2,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.6674,5.4299,25,4.079,82.58,82.58,6778.4,101.4

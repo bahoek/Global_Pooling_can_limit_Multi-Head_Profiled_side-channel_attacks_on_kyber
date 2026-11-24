@@ -1,0 +1,21 @@
+    [mobilenet N34(68h) s9 001/100] train 2.5854 | val 2.5357 | acc 11.01% | GE 5.662 | gn 1.384
+    [mobilenet N34(68h) s9 002/100] train 2.5391 | val 2.5614 | acc 10.63% | GE 5.756 | gn 0.903
+    [mobilenet N34(68h) s9 003/100] train 2.5295 | val 2.5194 | acc 11.11% | GE 5.607 | gn 0.502
+    [mobilenet N34(68h) s9 004/100] train 2.5233 | val 2.6753 | acc 10.53% | GE 5.883 | gn 0.448
+    [mobilenet N34(68h) s9 005/100] train 2.5172 | val 2.5061 | acc 11.37% | GE 5.563 | gn 0.404
+    [mobilenet N34(68h) s9 006/100] train 2.5129 | val 2.5648 | acc 10.87% | GE 5.710 | gn 0.348
+    [mobilenet N34(68h) s9 007/100] train 2.5083 | val 2.5240 | acc 11.09% | GE 5.629 | gn 0.506
+    [mobilenet N34(68h) s9 008/100] train 2.5038 | val 2.4912 | acc 11.31% | GE 5.517 | gn 0.690
+    [mobilenet N34(68h) s9 009/100] train 2.5004 | val 2.4903 | acc 11.41% | GE 5.508 | gn 0.500
+    [mobilenet N34(68h) s9 010/100] train 2.4970 | val 2.4883 | acc 11.41% | GE 5.501 | gn 0.514
+    [mobilenet N34(68h) s9 011/100] train 2.4939 | val 2.4902 | acc 11.39% | GE 5.506 | gn 0.374
+    [mobilenet N34(68h) s9 012/100] train 2.4912 | val 2.4860 | acc 11.46% | GE 5.487 | gn 0.351
+    [mobilenet N34(68h) s9 013/100] train 2.4891 | val 2.4838 | acc 11.49% | GE 5.477 | gn 0.295
+    [mobilenet N34(68h) s9 014/100] train 2.4871 | val 2.4837 | acc 11.48% | GE 5.477 | gn 0.290
+    [mobilenet N34(68h) s9 015/100] train 2.4849 | val 2.4823 | acc 11.49% | GE 5.472 | gn 0.205
+    [mobilenet N34(68h) s9 016/100] train 2.4829 | val 2.4796 | acc 11.52% | GE 5.462 | gn 0.189
+    [mobilenet N34(68h) s9 017/100] train 2.4815 | val 2.4792 | acc 11.59% | GE 5.458 | gn 0.125
+    [mobilenet N34(68h) s9 018/100] train 2.4802 | val 2.4787 | acc 11.52% | GE 5.457 | gn 0.084
+    [mobilenet N34(68h) s9 019/100] train 2.4792 | val 2.4771 | acc 11.59% | GE 5.445 | gn 0.170
+    [mobilenet N34(68h) s9 020/100] train 2.4782 | val 2.4761 | acc 11.59% | GE 5.441 | gn 0.067
+  [mobilenet N34(68h) s9] acc 11.59% | GE 5.4576 | 3.835M | VRAM max 6960MB avg 99MB | 160.22 min

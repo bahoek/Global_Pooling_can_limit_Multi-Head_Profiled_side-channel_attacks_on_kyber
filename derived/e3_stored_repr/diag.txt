@@ -1,0 +1,50 @@
+================================================================================
+E3 diagnosis — representation of the firmware sk and candidate enumeration
+================================================================================
+  78 signal coefficients (pairs 1~39)   actual range 15 ~ 3918
+  q = 3329 | within canonical form 0~3328 71/78 | negative 0 | q or above 7
+
+  per-coefficient offset o = (sk - sk%q)/q  —  0 means canonical form
+    o = +0 :  71
+    o = +1 :   7   coefficients [8, 20, 30, 40, 52, 62, 72]
+
+Per pair — mismatch rate between predicted and actual label of the correct candidate
+  pair   sk[2p]   o  sk[2p+1]   o canonical   oracle   cause
+  ----------------------------------------------------------------------------
+     1      256  +0        32  +0     0.00%    0.00%   
+     5     3340  +1       224  +0     3.05%    0.00%   outside canonical form: sk[8]=3340 (o=+1)
+    11     3870  +1       513  +0     2.25%    0.00%   outside canonical form: sk[20]=3870 (o=+1)
+    16     3629  +1       754  +0     2.45%    0.00%   outside canonical form: sk[30]=3629 (o=+1)
+    21     3388  +1       995  +0     3.00%    0.00%   outside canonical form: sk[40]=3388 (o=+1)
+    27     3918  +1      1284  +0     3.20%    0.00%   outside canonical form: sk[52]=3918 (o=+1)
+    32     3677  +1      1525  +0     9.20%    0.00%   outside canonical form: sk[62]=3677 (o=+1)
+    37     3436  +1      1766  +0     2.75%    0.00%   outside canonical form: sk[72]=3436 (o=+1)
+
+  pairs mismatching with canonical form: 7 / with oracle: 0
+  -> **0% on all 39 pairs. request 5-2 verification passed**
+
+paper chat additional checks (3)
+  (a) 7 coefficients with offset != 0     -> pairs [5, 11, 16, 21, 27, 32, 37]
+      pairs mismatching in canonical form -> pairs [5, 11, 16, 21, 27, 32, 37]
+      -> **The two sets are exactly the same.** Every mismatch is explained by the offset
+
+  (b) pair 32 (pair_idx 31) — which of the two coefficients is shifted
+      a0 = sk[62] =   3677  o = +1        a1 = sk[63] =   1525  o = +0
+      -> a0 (the even coefficient) is outside canonical form
+      canonical-form mismatch 9.20%  ->  oracle 0.00%
+
+paper chat instruction (2) — pairs to recompute with the oracle
+  newly computed, 8: [1, 5, 11, 16, 21, 27, 32, 37]
+    = 7 pairs with offset != 0 + 1 control pair (pair 1) to confirm the path reproduces
+  the remaining 31 pairs have tables identical to canonical form -> existing values are brought in and merged
+
+Mismatch cause memo (paper chat item F)
+  Some sk coefficients held by the firmware lie outside canonical form 0..q-1 (offset table above).
+  The evaluation folds those coefficients mod q and searches among 0..q-1 candidates, but fqmul is a Montgomery
+  reduction, so fqmul(a,b) and fqmul(a+q,b) are equal only mod q, and the stored 16-bit
+  pattern can differ. The rate of difference depends on the distribution of b (= ciphertext NTT coefficients)
+  and so varies per pair — hence 2~3% per pair, and 9.2% for pair 32.
+  If the candidates are laid out with the actual offset of that coefficient, the correct candidate matches the firmware value
+  bit for bit and the rate becomes 0%. However, the offset requires knowing the correct key, so this is not an attack but
+  an **upper bound** (paper chat decision: no 2-representation version at 4x cost; stated explicitly as oracle).
+================================================================================

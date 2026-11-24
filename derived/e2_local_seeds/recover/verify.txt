@@ -1,0 +1,12 @@
+probe reproduction (request 4-2) — direct cross-check against the existing local_models.csv
+  resnet N29 s0:  acc 95.456 -> 95.459 (+0.003)   info 3.115 -> 3.114 (-0.001)   early stopping ep 46 -> 46   ✓
+  resnet N39 s0:  acc 96.892 -> 96.887 (-0.005)   info 2.839 -> 2.836 (-0.003)   early stopping ep 15 -> 15   ✓
+  resnet N39 s1:  acc 97.096 -> 97.094 (-0.002)   info 3.194 -> 3.194 (+0.000)   early stopping ep 16 -> 16   ✓
+  resnet N49 s0:  acc 97.007 -> 97.01 (+0.003)   info 3.322 -> 3.328 (+0.006)   early stopping ep 25 -> 26   ✓
+  resnet N49 s1:  acc 97.104 -> 97.087 (-0.017)   info 3.336 -> 3.293 (-0.043)   early stopping ep 27 -> 22   ✓
+index cross-check match ✓
+local reproduction E2_resnet_N39_s0: Q*max 7 (existing 7) ✓
+local reproduction E2_resnet_N39_s1: Q*max 6 (existing 6) ✓
+local reproduction E2_resnet_N49_s0: Q*max 6 (existing 6) ✓
+local reproduction E2_resnet_N49_s1: Q*max 6 (existing 7) **differs**
+local reproduction E2_resnet_N29_s0: Q*max 8 (existing 8) ✓

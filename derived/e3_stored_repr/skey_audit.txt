@@ -1,0 +1,116 @@
+====================================================================================
+E3 appendix — audit of the secret key sk used in evaluation (read-only)
+====================================================================================
+
+(a) Where was this sk read from
+    file    <DATA>/split/kyber_test_crop.npz
+    array   labels  shape (20000, 256)  dtype int16
+    sk      = labels[0]  length 256  dtype int64
+    keys in the npz: ['ciphertexts', 'labels', 'traces']
+
+    Lines that read it (code in this folder):
+  lines that read labels[0]
+    no such line -> not a value produced by the code in this folder
+
+    Lines that produce it (if in this folder):
+  lines that write kyber_test_crop.npz or build labels
+    eval_nscan.py:580:  d = np.load(os.path.join(SPLIT_DIR, "kyber_test_crop.npz"))
+    ge_sr_multi.py:404:  d = np.load(os.path.join(SPLIT_DIR, "kyber_test_crop.npz"))
+    label_leak.py:95:  Yte_all = labels_of(T, os.path.join(E.SPLIT_DIR, "kyber_test_crop.npz"))
+    make_zenodo.py:95:  ("split/kyber_test_crop.npz", "traces/kyber_test.npz"),
+    probe_local_recover.py:351:  d = np.load(os.path.join(E.SPLIT_DIR, "kyber_test_crop.npz"))
+    shift_probe.py:155:  d = np.load(os.path.join(E.SPLIT_DIR, "kyber_test_crop.npz"))
+
+(b) NTT-domain values or normal-domain coefficients — exactly the form fed into the firmware?
+    Decided by how it is used. Lines where train_nscan.v_stored uses sk:
+  v_stored / sk usage
+    eval_nscan.py:234:  a0r, a1r = int(sk[base]), int(sk[base + 1])
+    res_hw16.py:251:  r0, r1 = basemul_pair(int(sk[base]), int(sk[base + 1]),
+    train_nscan.py:168:  def v_stored(sk, b, idx):
+    train_nscan.py:175:  a0, a1 = int(sk[base]), int(sk[base + 1])
+    In eval_nscan:
+      pair_zeta():  z = ZETAS[64 + (2p)//4]    <- zetas[64+i] of the reference basemul
+      check_pair(): s0 = fqmul(sk[2p], b0) + fqmul(fqmul(sk[2p+1], b1), z)
+                    b = v_ntt(v_unpack_10bit(ct))  <- ciphertext into the NTT domain
+    basemul holds only in the NTT domain and sk is its operand, so
+    -> **they are NTT-domain values.** Not normal-domain coefficients.
+    Exactly the form fed into the firmware? All 39 pairs pass the check (check_pair) that the decomposition
+    matches the training labels bit for bit, so **they are exactly the int16 values the firmware fed into basemul.**
+
+(d)(e) Value range — a structure that uses values unpacked from 12 bits (0..4095) without reduction?
+    all 256 of sk (Kyber-768 polyvec = 3 x 256 = 768)
+      min 15   max 4079
+      negative        0
+      q(3329) or above 40
+      4096 or above   0
+      0..q-1 (canonical form)        216
+      q..4095 (12-bit unreduced)      40
+      4096 or above                   0
+    signal range (pairs 1~39, coefficients 0~77)
+      min 15  max 3918  q or above 7
+    outside the 39 pairs (coefficients 78~255)
+      min 16  max 4079  q or above 33
+    -> all within 0..4095 with values at or above q mixed in. **Consistent with 12-bit unreduced.**
+       (But a spec-compliant poly_tobytes reduces to 0..q-1 when packing, so values that went
+        through a round trip could not be at or above q — read together with verdict (c) below)
+
+The arithmetic-progression rule the paper chat saw — how far does it actually hold
+    coefficients of pair p: base = 2p.  Below, groups at 5-pair intervals
+    pair   sk[2p]   diff  sk[2p+1]   diff     sum
+    ------------------------------------------------
+       1      256               32            288
+       6       15   -241       273   +241     288
+      11     3870  +3855       513   +240    4383
+      16     3629   -241       754   +241    4383
+      21     3388   -241       995   +241    4383
+      26     3147   -241      1236   +241    4383
+      31     2906   -241      1477   +241    4383
+      36     2665   -241      1718   +241    4383
+
+    Of 7 intervals at 5-pair spacing, 6 have the even coefficient at exactly -241 and 6 have the odd one at +241
+    frequent values among all adjacent differences of sk: -224(8 times), 995(7 times), 754(7 times), 513(7 times), 499(7 times), 258(7 times), 17(7 times), -465(7 times)
+    253 distinct values / 256 (a truly random key should have almost all distinct)
+
+(c) How was the key determined — decisive check: is it a small polynomial after inverse NTT
+    inverse NTT self-check: round trip of 20 CBD(eta=2) polynomials all match ✓
+    sk is split into 1 polynomial (256 coefficients each) and each is inverse-transformed
+    If it were a real Kyber-768 secret key, **all** coefficients would have to be in {-2..2} (CBD eta=2).
+    Measured as a control: uniform random mod q and the arithmetic pattern both put 254
+    of 256 coefficients outside that range — the verdict separates cleanly.
+     poly  coefficients     min     max   |c|>2     verdict
+    ----------------------------------------------------------
+        0         0~255   -1652    1632     256    **not small**
+
+    -> The inverse transform is not small. **It is not a Kyber secret key sampled from CBD.**
+       It is not keygen output but values filled by a formula or pattern, or arbitrary values.
+       **This means the recovery target is not a real Kyber key, and the attack
+       difficulty (candidate distribution, HW distribution) may differ from reality, so the paper
+       must state which key was used.**
+       Which of these it is requires looking at the relevant line of the collection code (below).
+
+    Lines that set the key (if in this folder):
+  lines that determine sk
+    RESNET_kyber_test.py:239:  def run_attack_evaluation(target_count, seed, traces, hyp_table, true_secret_keys, device,
+    RESNET_kyber_test.py:278:  true_key = int(true_secret_keys[0, idx])
+    RESNET_kyber_test.py:400:  true_secret_keys = test_data['labels']
+    RESNET_kyber_test.py:415:  result = run_attack_evaluation(target_count, seed, traces, hyp_table, true_secret_keys, device,
+    RESNET_kyber_test.py:440:  result = run_attack_evaluation(target_count, seed, traces, hyp_table, true_secret_keys, device,
+    eval_nscan.py:597:  sk = np.asarray(d["labels"][0], np.int64)
+    label_leak.py:74:  sk = np.asarray(d["labels"][0], np.int64)
+    merge_split.py:66:  sk=lb[0].copy())
+    nicv_pairs.py:85:  sk = np.asarray(d["labels"][0], np.int64)
+    probe_heads.py:232:  sk = lab[0]
+    probe_local.py:253:  sk = np.asarray(d["labels"][0], np.int64)
+    probe_local_ctrl.py:109:  sk = np.asarray(d["labels"][0], np.int64)
+    probe_local_ext.py:133:  sk = np.asarray(d["labels"][0], np.int64)
+    probe_local_recover.py:353:  sk = np.asarray(d["labels"][0], np.int64)
+    … (the rest omitted)
+
+====================================================================================
+Summary — by paper chat question
+  (a) labels[0] of kyber_test_crop.npz. The script that made it is in this folder
+  (b) NTT domain. Exactly the int16 values the firmware fed into basemul (bit-match check passed)
+  (c) see the inverse-NTT verdict above; the lines that set the key are above
+  (d) all 0..4095, 40 at or above q, 0 negative -> consistent with 12-bit unreduced
+  (e) outside the 39 pairs: min 16 max 4079, 33 at or above q
+====================================================================================

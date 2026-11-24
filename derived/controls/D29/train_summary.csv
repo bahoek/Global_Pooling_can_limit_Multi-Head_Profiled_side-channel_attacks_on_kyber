@@ -1,0 +1,2 @@
+run_id,arch,resnet_variant,n_pairs,heads,seed,lr,batch,max_epochs,patience,grad_clip,loss_reduction,label_type,phantom_label,crop_lo,crop_hi,leak_pairs,val_acc_allheads,ge_allheads,epochs_run,params_m,total_time_min,best_model_time_min,vram_max_mb,vram_avg_mb
+D29_resnet_N29_s0,resnet,resnet18,29,58,0,0.001,128,200,50,5.0,mean,hw16,real,0,40000,39,89.1069,1.2045,197,4.409,518.8,404.84,3436.8,105.9

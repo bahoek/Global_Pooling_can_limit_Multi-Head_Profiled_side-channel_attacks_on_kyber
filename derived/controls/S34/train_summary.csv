@@ -1,0 +1,11 @@
+run_id,arch,resnet_variant,n_pairs,heads,seed,lr,batch,max_epochs,patience,grad_clip,loss_reduction,label_type,phantom_label,crop_lo,crop_hi,leak_pairs,val_acc_allheads,ge_allheads,epochs_run,params_m,total_time_min,best_model_time_min,vram_max_mb,vram_avg_mb
+S34_mobilenet_N34_s0,mobilenet,,34,68,0,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.6364,5.433,23,3.835,72.95,69.74,6959.9,98.3
+S34_mobilenet_N34_s1,mobilenet,,34,68,1,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.6413,5.4367,25,3.835,79.42,69.92,6959.9,98.3
+S34_mobilenet_N34_s2,mobilenet,,34,68,2,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,74.6455,1.2979,100,3.835,317.54,311.13,6959.9,98.4
+S34_mobilenet_N34_s3,mobilenet,,34,68,3,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,35.1874,3.6855,100,3.835,317.12,317.12,6959.9,98.4
+S34_mobilenet_N34_s4,mobilenet,,34,68,4,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,70.7057,1.3421,100,3.835,317.11,307.62,6959.9,98.4
+S34_mobilenet_N34_s5,mobilenet,,34,68,5,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,91.3145,1.1032,68,3.835,542.86,542.86,6959.8,99.4
+S34_mobilenet_N34_s7,mobilenet,,34,68,7,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,92.2193,1.0944,91,3.835,717.96,709.97,6959.8,99.4
+S34_mobilenet_N34_s6,mobilenet,,34,68,6,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.7074,5.4301,25,3.835,199.92,199.92,6959.9,99.1
+S34_mobilenet_N34_s9,mobilenet,,34,68,9,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.5915,5.4576,20,3.835,160.22,136.16,6959.9,99.1
+S34_mobilenet_N34_s8,mobilenet,,34,68,8,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,89.7063,1.1261,100,3.835,749.13,727.2,6959.9,99.1

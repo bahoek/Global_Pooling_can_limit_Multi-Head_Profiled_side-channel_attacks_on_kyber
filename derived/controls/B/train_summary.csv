@@ -1,0 +1,11 @@
+run_id,arch,resnet_variant,n_pairs,heads,seed,lr,batch,max_epochs,patience,grad_clip,loss_reduction,label_type,phantom_label,crop_lo,crop_hi,leak_pairs,val_acc_allheads,ge_allheads,epochs_run,params_m,total_time_min,best_model_time_min,vram_max_mb,vram_avg_mb
+B_resnet_N128_s0,resnet,resnet18,128,256,0,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,23.1607,4.3878,66,6.339,209.23,206.03,3469.3,138.3
+B_resnet_N128_s1,resnet,resnet18,128,256,1,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,24.2298,4.3841,99,6.339,313.53,310.36,3469.3,138.3
+B_resnet_N128_s2,resnet,resnet18,128,256,2,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,27.2002,4.3039,84,6.339,266.15,266.14,3469.3,138.3
+B_resnet_N128_s3,resnet,resnet18,128,256,3,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,23.7983,4.3852,92,6.339,291.49,291.49,3469.3,138.3
+B_resnet_N128_s4,resnet,resnet18,128,256,4,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,16.8263,4.9876,67,6.339,212.33,212.32,3469.3,138.3
+B_resnet_N128_s5,resnet,resnet18,128,256,5,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,25.3845,4.346,100,6.339,316.51,316.51,3469.3,138.3
+B_resnet_N128_s6,resnet,resnet18,128,256,6,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,11.7435,5.427,17,6.339,53.64,12.62,3469.3,138.3
+B_resnet_N128_s7,resnet,resnet18,128,256,7,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,22.3005,4.5672,88,6.339,278.63,275.48,3469.3,138.3
+B_resnet_N128_s8,resnet,resnet18,128,256,8,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,26.1948,4.3313,99,6.339,313.68,307.37,3469.3,138.3
+B_resnet_N128_s9,resnet,resnet18,128,256,9,0.001,128,100,15,5.0,mean,hw16,real,0,40000,39,27.389,4.2996,89,6.339,281.91,281.91,3469.3,138.3

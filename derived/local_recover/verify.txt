@@ -1,0 +1,25 @@
+
+==============================================================================
+Section 2 verification — this must pass before running the local results
+==============================================================================
+[verify a] A0_resnet_N29_s0: 78 heads, max diff 0.0000%p  match ✓
+[verify a] A1_resnet_N39_s0: 78 heads, max diff 0.0000%p  match ✓
+[verify a] A2_resnet_N39_s1: 78 heads, max diff 0.0000%p  match ✓
+[verify a] A3_resnet_N39_s0_D: 78 heads, max diff 0.0000%p  match ✓
+[verify a] A4_resnet_N29_s0_D29: 78 heads, max diff 0.0000%p  match ✓
+[verify a] B1a_resnet_N49_s0: 78 heads, max diff 0.0000%p  match ✓
+[verify a] B1b_resnet_N49_s1: 78 heads, max diff 0.0000%p  match ✓
+[verify a] B1c_resnet_N128_s0: 78 heads, max diff 0.0000%p  match ✓
+[verify a] B1d_resnet_N128_s1: 78 heads, max diff 0.0000%p  match ✓
+[verify a] B2a_mobilenet_N39_s1: 78 heads, max diff 0.0000%p  match ✓
+[verify a] B2b_mobilenet_N39_s2: 78 heads, max diff 0.0000%p  match ✓
+[verify b] resnet N39 s0
+          existing fine : Qmax 18 / Qmean 8.4 / SR@5 0.500 / SR@10 0.973
+          this path     : Qmax 18 / Qmean 8.4 / SR@5 0.500 / SR@10 0.973
+          reproduced ✓
+[verify b] resnet N29 s0
+          existing fine : Qmax 10 / Qmean 5.8 / SR@5 0.921 / SR@10 1.000
+          this path     : Qmax 10 / Qmean 5.8 / SR@5 0.921 / SR@10 1.000
+          reproduced ✓
+
+Verification result: head order OK / computation path OK

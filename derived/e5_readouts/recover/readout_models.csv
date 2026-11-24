@@ -1,0 +1,65 @@
+run_id,readout,arch,n_pairs,seed,ckpt,acc_mean,acc_min,info_mean,info_min,probe_epochs,q_star_max,q_star_mean,sr_q5,n_pairs_censored,slowest_pair,source
+E5_resnet_N39_s0,orig,resnet,39,0,main,61.142,34.3,2.2302,1.2717,,18,8.4,0.5,0,32,eval_heads/eval_runs (fine)
+E5_resnet_N39_s0,P,resnet,39,0,main,60.774,34.15,2.2187,1.2106,25,19,8.74,0.4962,0,32,E5 probe + E5 key recovery
+E5_resnet_N39_s0,S,resnet,39,0,main,97.033,95.55,3.1926,2.8242,13,7,5.21,0.9821,0,29,E5 probe + E5 key recovery
+E5_resnet_N39_s0,local4,resnet,39,0,main,96.892,95.0,2.839,1.7361,15,7,5.2,0.9795,0,13,probe_local_ext A1_resnet_N39_s0 + localrec A1_local
+E5_resnet_N39_s1,orig,resnet,39,1,main,59.482,34.85,2.1081,1.2852,,18,9.3,0.4308,0,32,eval_heads/eval_runs (fine)
+E5_resnet_N39_s1,P,resnet,39,1,main,58.776,34.55,2.0798,1.22,25,18,9.51,0.4026,0,32,E5 probe + E5 key recovery
+E5_resnet_N39_s1,S,resnet,39,1,main,97.069,95.55,3.2075,2.5957,13,7,5.33,0.9782,0,32,E5 probe + E5 key recovery
+E5_resnet_N39_s1,local4,resnet,39,1,main,97.096,95.6,3.194,2.6789,16,6,5.2,0.9859,0,3,probe_local_ext A2_resnet_N39_s1 + localrec A2_local
+E5_resnet_N49_s0,orig,resnet,49,0,main,68.493,34.4,2.5261,1.2726,,12,7.1,0.6897,0,32,eval_heads/eval_runs (fine)
+E5_resnet_N49_s0,P,resnet,49,0,main,67.836,35.1,2.4612,1.2187,23,12,7.31,0.6526,0,32,E5 probe + E5 key recovery
+E5_resnet_N49_s0,S,resnet,49,0,main,97.026,95.35,3.1142,2.5603,13,7,5.28,0.9782,0,29,E5 probe + E5 key recovery
+E5_resnet_N49_s0,local4,resnet,49,0,main,97.007,94.85,3.322,3.1088,25,6,5.1,0.991,0,5,probe_local_ext B1a_resnet_N49_s0 + localrec B1a_local
+E5_resnet_N49_s1,orig,resnet,49,1,main,59.246,35.1,2.1211,1.2812,,19,9.0,0.4192,0,32,eval_heads/eval_runs (fine)
+E5_resnet_N49_s1,P,resnet,49,1,main,58.538,35.0,2.0745,1.2194,22,19,9.51,0.4,0,32,E5 probe + E5 key recovery
+E5_resnet_N49_s1,S,resnet,49,1,main,97.004,95.5,3.0534,1.99,13,8,5.41,0.9718,0,16,E5 probe + E5 key recovery
+E5_resnet_N49_s1,local4,resnet,49,1,main,97.104,95.35,3.336,3.069,27,7,5.2,0.9846,0,32,probe_local_ext B1b_resnet_N49_s1 + localrec B1b_local
+E5_resnet_N9_s0,orig,resnet,9,0,main,93.072,82.9,2.8138,1.7425,,6,5.1,0.9722,0,3,eval_heads/eval_runs (fine)
+E5_resnet_N9_s0,P,resnet,9,0,main,92.639,81.5,3.1665,2.6968,18,,,,,,E5 probe
+E5_resnet_N9_s0,S,resnet,9,0,main,93.672,83.25,3.0887,2.5116,35,,,,,,E5 probe
+E5_resnet_N9_s0,local4,resnet,9,0,main,95.922,92.75,3.257,2.6352,56,,,,,,probe_local (11-09)
+E5_resnet_N9_s1,orig,resnet,9,1,main,93.603,83.7,2.8346,1.6788,,6,5.2,0.9667,0,3,eval_heads/eval_runs (fine)
+E5_resnet_N9_s1,P,resnet,9,1,main,93.186,83.05,3.2163,2.7467,21,,,,,,E5 probe
+E5_resnet_N9_s1,S,resnet,9,1,main,94.039,86.3,3.1126,2.6272,29,,,,,,E5 probe
+E5_resnet_N9_s1,local4,resnet,9,1,main,95.617,91.5,3.178,1.7605,60,,,,,,probe_local (11-09)
+E5_resnet_N19_s0,orig,resnet,19,0,main,91.075,74.35,2.6769,1.3882,,7,5.3,0.9579,0,3,eval_heads/eval_runs (fine)
+E5_resnet_N19_s0,P,resnet,19,0,main,90.537,72.65,3.0903,2.4367,26,,,,,,E5 probe
+E5_resnet_N19_s0,S,resnet,19,0,main,87.28,39.45,2.8168,0.9464,32,,,,,,E5 probe
+E5_resnet_N19_s0,local4,resnet,19,0,main,95.737,89.65,3.212,1.6844,60,,,,,,probe_local (11-09)
+E5_resnet_N19_s1,orig,resnet,19,1,main,90.561,72.75,2.662,1.5637,,7,5.5,0.9526,0,3,eval_heads/eval_runs (fine)
+E5_resnet_N19_s1,P,resnet,19,1,main,89.609,70.85,2.9949,2.4065,20,,,,,,E5 probe
+E5_resnet_N19_s1,S,resnet,19,1,main,89.725,39.95,2.9189,0.88,30,,,,,,E5 probe
+E5_resnet_N19_s1,local4,resnet,19,1,main,95.478,87.15,3.183,1.5196,54,,,,,,probe_local (11-09)
+E5_resnet_N29_s0,orig,resnet,29,0,main,86.771,51.85,2.8334,1.2449,,10,5.8,0.9207,0,29,eval_heads/eval_runs (fine)
+E5_resnet_N29_s0,P,resnet,29,0,main,86.303,51.7,3.0069,2.1325,35,11,5.9,0.9121,0,29,E5 probe + E5 key recovery
+E5_resnet_N29_s0,S,resnet,29,0,main,94.122,46.65,3.1508,0.9959,26,28,6.28,0.95,0,24,E5 probe + E5 key recovery
+E5_resnet_N29_s0,local4,resnet,29,0,main,95.456,60.95,3.115,0.5607,46,8,5.4,0.9603,0,20,probe_local_ext A0_resnet_N29_s0 + localrec A0_local
+E5_resnet_N29_s1,orig,resnet,29,1,main,86.462,51.25,2.8401,1.6844,,8,5.7,0.931,0,29,eval_heads/eval_runs (fine)
+E5_resnet_N29_s1,P,resnet,29,1,main,86.016,51.85,2.9968,1.8103,33,10,5.76,0.9172,0,29,E5 probe + E5 key recovery
+E5_resnet_N29_s1,S,resnet,29,1,main,95.433,68.4,3.2163,1.9283,27,7,5.52,0.9638,0,9,E5 probe + E5 key recovery
+E5_resnet_N29_s1,local4,resnet,29,1,main,94.975,47.6,3.086,0.3196,49,11,5.76,0.9448,0,16,probe_local (11-09) + E2
+E5_resnet_N39_s0_D,orig,resnet,39,0,D,74.894,40.95,2.5095,1.6322,,10,6.6,0.7795,0,12,eval_heads/eval_runs (fine)
+E5_resnet_N39_s0_D,P,resnet,39,0,D,74.226,40.4,2.6783,1.5554,30,12,6.79,0.7564,0,32,E5 probe + E5 key recovery
+E5_resnet_N39_s0_D,S,resnet,39,0,D,96.587,90.7,3.1455,2.5391,17,10,5.82,0.9628,0,9,E5 probe + E5 key recovery
+E5_resnet_N39_s0_D,local4,resnet,39,0,D,96.255,85.05,3.07,1.1629,39,8,5.6,0.9487,0,16,probe_local_ext A3_resnet_N39_s0_D + localrec A3_local
+E5_resnet_N29_s0_D29,orig,resnet,29,0,D29,89.056,53.1,2.554,0.8977,,9,5.9,0.9345,0,15,eval_heads/eval_runs (fine)
+E5_resnet_N29_s0_D29,P,resnet,29,0,D29,88.212,53.05,3.0044,2.274,25,10,5.86,0.9241,0,29,E5 probe + E5 key recovery
+E5_resnet_N29_s0_D29,S,resnet,29,0,D29,90.415,32.15,2.9473,0.5914,40,9,5.9,0.8828,0,5,E5 probe + E5 key recovery
+E5_resnet_N29_s0_D29,local4,resnet,29,0,D29,93.32,35.9,2.974,0.1811,56,12,6.0,0.9,0,16,probe_local_ext A4_resnet_N29_s0_D29 + localrec A4_local
+E5_mobilenet_N39_s1,orig,mobilenet,39,1,main,71.683,49.7,2.6941,2.1653,,9,6.4,0.8244,0,32,eval_heads/eval_runs (fine)
+E5_mobilenet_N39_s1,P,mobilenet,39,1,main,71.263,50.8,2.6571,2.0689,27,10,6.56,0.7923,0,29,E5 probe + E5 key recovery
+E5_mobilenet_N39_s1,S,mobilenet,39,1,main,90.104,54.3,3.0381,1.4875,30,11,5.77,0.9359,0,19,E5 probe + E5 key recovery
+E5_mobilenet_N39_s1,local4,mobilenet,39,1,main,85.116,26.75,2.609,0.2269,48,,7.2,0.7962,1,19,probe_local_ext B2a_mobilenet_N39_s1 + localrec B2a_local
+E5_mobilenet_N39_s2,orig,mobilenet,39,2,main,75.936,47.65,2.739,2.1109,,9,6.3,0.8526,0,32,eval_heads/eval_runs (fine)
+E5_mobilenet_N39_s2,P,mobilenet,39,2,main,75.574,48.25,2.7235,1.9619,37,10,6.41,0.8346,0,29,E5 probe + E5 key recovery
+E5_mobilenet_N39_s2,S,mobilenet,39,2,main,92.903,70.55,3.1623,2.1491,23,9,5.67,0.9679,0,21,E5 probe + E5 key recovery
+E5_mobilenet_N39_s2,local4,mobilenet,39,2,main,92.54,50.2,2.947,0.6647,39,8,5.6,0.9513,0,4,probe_local_ext B2b_mobilenet_N39_s2 + localrec B2b_local
+E5_resnet_N128_s0,orig,resnet,128,0,main,54.29,10.45,1.8312,-0.0232,,,13.1,0.4256,5,3,eval_heads/eval_runs (fine)
+E5_resnet_N128_s0,P,resnet,128,0,main,53.617,10.1,1.7392,-0.0629,26,,12.06,0.4103,7,33,E5 probe + E5 key recovery
+E5_resnet_N128_s0,S,resnet,128,0,main,87.485,33.35,2.923,0.7835,35,10,6.15,0.8628,0,16,E5 probe + E5 key recovery
+E5_resnet_N128_s0,local4,resnet,128,0,main,80.525,14.9,1.749,-0.0059,58,16,8.4,0.6667,0,33,probe_local_ext B1c_resnet_N128_s0 + localrec B1c_local
+E5_resnet_N128_s1,orig,resnet,128,1,main,58.401,34.3,2.1012,1.2738,,18,9.2,0.4744,0,32,eval_heads/eval_runs (fine)
+E5_resnet_N128_s1,P,resnet,128,1,main,58.022,34.6,2.0051,1.197,26,18,9.79,0.4231,0,32,E5 probe + E5 key recovery
+E5_resnet_N128_s1,S,resnet,128,1,main,96.583,90.6,3.2542,2.423,17,7,5.26,0.9833,0,30,E5 probe + E5 key recovery
+E5_resnet_N128_s1,local4,resnet,128,1,main,94.444,78.55,2.141,1.0468,52,9,5.7,0.9474,0,39,probe_local_ext B1d_resnet_N128_s1 + localrec B1d_local

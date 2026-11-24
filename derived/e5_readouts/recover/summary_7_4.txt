@@ -1,0 +1,54 @@
+================================================================================================================
+E5 summary — request 7-4(4).  trained pairs, 2000 test traces — accuracy % / information bit / Q*max (fine)
+================================================================================================================
+run                           original head         P (pooled refit)     S (one position)      local 4 positions (existing)
+----------------------------------------------------------------------------------------------------------------
+E5_resnet_N39_s0              61.1 / 2.23 / 18      60.8 / 2.22 / 19     97.0 / 3.19 / 7       96.9 / 2.84 / 7
+E5_resnet_N39_s1              59.5 / 2.11 / 18      58.8 / 2.08 / 18     97.1 / 3.21 / 7       97.1 / 3.19 / 6
+E5_resnet_N49_s0              68.5 / 2.53 / 12      67.8 / 2.46 / 12     97.0 / 3.11 / 7       97.0 / 3.32 / 6
+E5_resnet_N49_s1              59.2 / 2.12 / 19      58.5 / 2.07 / 19     97.0 / 3.05 / 8       97.1 / 3.34 / 7
+E5_resnet_N9_s0                93.1 / 2.81 / 6       92.6 / 3.17 / –     93.7 / 3.09 / –       95.9 / 3.26 / –
+E5_resnet_N9_s1                93.6 / 2.83 / 6       93.2 / 3.22 / –     94.0 / 3.11 / –       95.6 / 3.18 / –
+E5_resnet_N19_s0               91.1 / 2.68 / 7       90.5 / 3.09 / –     87.3 / 2.82 / –       95.7 / 3.21 / –
+E5_resnet_N19_s1               90.6 / 2.66 / 7       89.6 / 2.99 / –     89.7 / 2.92 / –       95.5 / 3.18 / –
+E5_resnet_N29_s0              86.8 / 2.83 / 10      86.3 / 3.01 / 11    94.1 / 3.15 / 28       95.5 / 3.12 / 8
+E5_resnet_N29_s1               86.5 / 2.84 / 8      86.0 / 3.00 / 10     95.4 / 3.22 / 7      95.0 / 3.09 / 11
+E5_resnet_N39_s0_D            74.9 / 2.51 / 10      74.2 / 2.68 / 12    96.6 / 3.15 / 10       96.3 / 3.07 / 8
+E5_resnet_N29_s0_D29           89.1 / 2.55 / 9      88.2 / 3.00 / 10     90.4 / 2.95 / 9      93.3 / 2.97 / 12
+E5_mobilenet_N39_s1            71.7 / 2.69 / 9      71.3 / 2.66 / 10    90.1 / 3.04 / 11     85.1 / 2.61 / >50
+E5_mobilenet_N39_s2            75.9 / 2.74 / 9      75.6 / 2.72 / 10     92.9 / 3.16 / 9       92.5 / 2.95 / 8
+E5_resnet_N128_s0            54.3 / 1.83 / >50     53.6 / 1.74 / >50    87.5 / 2.92 / 10      80.5 / 1.75 / 16
+E5_resnet_N128_s1             58.4 / 2.10 / 18      58.0 / 2.01 / 18     96.6 / 3.25 / 7       94.4 / 2.14 / 9
+----------------------------------------------------------------------------------------------------------------
+  Q*max '–' = not a key recovery target (N9·N19), '>50' = censored
+
+7-5 decision values — four N39·N49 models (criteria fixed before seeing the results)
+  run                       P-orig acc    S acc   S-P acc  local4-S  P-orig info  S-P info
+  E5_resnet_N39_s0               -0.37    97.03    +36.26     -0.14       -0.011    +0.974
+  E5_resnet_N39_s1               -0.71    97.07    +38.29     +0.03       -0.028    +1.128
+  E5_resnet_N49_s0               -0.66    97.03    +29.19     -0.02       -0.065    +0.653
+  E5_resnet_N49_s1               -0.71    97.00    +38.47     +0.10       -0.047    +0.979
+  E5_mobilenet_N39_s1            -0.42    90.10    +18.84     -4.99       -0.037    +0.381
+  E5_mobilenet_N39_s2            -0.36    92.90    +17.33     -0.36       -0.015    +0.439
+  criteria: P-orig |acc| ≤ 5%p and S ≥ 90% -> box 1 / P-orig ≥ 15%p -> box 2 / S≈P and only local4 higher -> box 3
+
+N ≤ 29 — whether P's information equals S and local (7-5 box 4)
+  E5_resnet_N9_s0          orig 2.814  P 3.167  S 3.089  local4 3.257  bit
+  E5_resnet_N9_s1          orig 2.835  P 3.216  S 3.113  local4 3.178  bit
+  E5_resnet_N19_s0         orig 2.677  P 3.090  S 2.817  local4 3.212  bit
+  E5_resnet_N19_s1         orig 2.662  P 2.995  S 2.919  local4 3.183  bit
+  E5_resnet_N29_s0         orig 2.833  P 3.007  S 3.151  local4 3.115  bit
+  E5_resnet_N29_s1         orig 2.840  P 2.997  S 3.216  local4 3.086  bit
+================================================================================================================
+
+Reference — existing pooled refit (probe_heads, 11-09) vs this P
+  E5_resnet_N39_s0         probe_heads acc 61.376 / info 2.272   this P 60.774 / 2.2187
+  E5_resnet_N39_s1         probe_heads acc 59.836 / info 2.143   this P 58.776 / 2.0798
+  E5_resnet_N9_s0          probe_heads acc 92.897 / info 3.2   this P 92.639 / 3.1665
+  E5_resnet_N9_s1          probe_heads acc 93.378 / info 3.22   this P 93.186 / 3.2163
+  E5_resnet_N19_s0         probe_heads acc 90.967 / info 3.058   this P 90.537 / 3.0903
+  E5_resnet_N19_s1         probe_heads acc 90.425 / info 3.055   this P 89.609 / 2.9949
+  E5_resnet_N29_s0         probe_heads acc 86.741 / info 3.014   this P 86.303 / 3.0069
+  E5_resnet_N29_s1         probe_heads acc 86.393 / info 3.001   this P 86.016 / 2.9968
+  E5_mobilenet_N39_s1      probe_heads acc 71.831 / info 2.712   this P 71.263 / 2.6571
+  E5_mobilenet_N39_s2      probe_heads acc 76.458 / info 2.787   this P 75.574 / 2.7235

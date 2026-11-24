@@ -1,0 +1,5 @@
+arch,n_pairs,heads,eval_mode,n_seeds,n_converged,conv_rate,sr_q1_mean,sr_q2_mean,sr_q5_mean,sr_q10_mean,sr_q20_mean,sr_q50_mean,sr_q100_mean,sr_q200_mean,sr_q500_mean,sr_q50_std,sr_q500_std,acc_signal_mean,acc_signal_std,ge_log2_q50_mean,ge_log2_q500_mean,ge_log2_q500_std,q_star_max_mean,q_star_max_std,q_star_mean_mean,q_star_mean_std,n_censored_mean,pairs_recovered_mean,phantom_sr_mean,phantom_ge_log2_mean,expected_capacity
+resnet,29,58,sum,1,1,1.0,0.0,0.0,0.9276,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,89.06,0.0,0.0,0.0,0.0,10.0,0.0,7.1,0.0,0.0,29.0,,,1.0
+resnet,29,58,r0,1,1,1.0,0.0,0.0,0.0069,0.9103,1.0,1.0,1.0,1.0,1.0,0.0,0.0,89.06,0.0,0.0,0.0,0.0,20.0,0.0,13.8,0.0,0.0,29.0,,,1.0
+resnet,39,78,sum,1,1,1.0,0.0,0.0,0.7949,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,74.89,0.0,0.0,0.0,0.0,10.0,0.0,8.2,0.0,0.0,39.0,,,1.0
+resnet,39,78,r0,1,1,1.0,0.0,0.0,0.0026,0.7795,0.9846,1.0,1.0,1.0,1.0,0.0,0.0,74.89,0.0,0.0,0.0,0.0,50.0,0.0,16.7,0.0,0.0,39.0,,,1.0
